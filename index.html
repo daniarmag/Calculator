@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+}
+
+.calculator {
+    width: 240px;
+    margin: 40px auto;
+    background-color: #333; 
+    padding: 15px;
+    border-style: solid;
+    border-color: #555; 
+}
+
+.buttonNum,
+.button {
+    float: left;
+    width: 50px;
+    margin: 5px;
+    background-color: #555; 
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.buttonNum:hover,
+.button:hover {
+    background-color: #777; 
+    color: white;
+}
+
+.monitor {
+    background-color: #222; 
+    width: 210px;
+    padding: 10px;
+    color: white;
+    margin: 5px;
+    border-radius: 4px;
+    text-align: right; 
+}
+
+.result {
+    background-color: #222; 
+    width: 110px;
+    margin-left: 125px;
+    margin-top: -34px;
+    background-color: rgb(78, 173, 175);
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 4px;
+    cursor: pointer;
+}
+    </style>
+  </head>
+  <body>
+    <div style="text-align: center; font-size: 40px; color:black">
+
+    </div>
+    <div class="calculator" style="border-radius: 20px;">
+        <div class="monitor">0</div>
+        <div class="button">C</div>
+        <div class="button">%</div>
+        <div class="button">^</div>
+        <div class="button">+</div>
+        <div class="buttonNum">1</div>
+        <div class="buttonNum">2</div>
+        <div class="buttonNum">3</div>
+        <div class="button">-</div>
+        <div class="buttonNum">4</div>
+        <div class="buttonNum">5</div>
+        <div class="buttonNum">6</div>
+        <div class="button">*</div>
+        <div class="buttonNum">7</div>
+        <div class="buttonNum">8</div>
+        <div class="buttonNum">9</div>
+        <div class="button">/</div>
+        <div class="buttonNum">0</div>
+        <div class="button">.</div>
+        <div style="clear: both;"></div>
+        <div class="result">=</div>
+    </div>
+
+    <!-- special scripts for integration in MTW gallery - must be placed at the bottom of the HTML after your code -->
+    <script>
+        // custom config for the MTW app 
+        const mtwAppConfig = {
+            border: true // app border in the MTW page                    
+        }
+
+        ///////////////////////////////////////////////////////
+        // implement this functions in order to use private API        
+        const sendPrivateApiRequest = async () => {
+            // your code here:
+            // sendRequestToParent({ cat: 'getAssets' })
+        }        
+
+        const acceptPrivateApiResponse = async (data) => {
+            // process received data here:
+            // console.log(data)
+        }
+
+        // use this in order to send on document load
+        document.addEventListener('DOMContentLoaded', () => {
+            // your code here:
+            //sendRequestToParent({ method: 'getAssets' })
+        })
+
+    </script>
+    <script src="https://morethanwallet.com/appstore/index.js"></script>
+  </body>
+</html>
