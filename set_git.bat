@@ -2,7 +2,7 @@
 :: to run use .\set_git.bat
 @echo off
 :: add :: before the next row to initialize the repository
-exit /b
+::exit /b
 
 git init
 git add .
