@@ -120,6 +120,7 @@ function deleteFromEquation()
         { operator: "Math.sqrt", displayLength: 1 },
         { operator: "factorial", displayLength: 3 }
     ];
+    //If the char that is being removed is not an operation from the list above this var will help remove a single char from the equation.
     let expressionLength =  1;
     for (const { operator, displayLength } of operatorsToDelete) 
     {
@@ -135,6 +136,7 @@ function deleteFromEquation()
         toSolve = toSolve.slice(0, -1);
         document.querySelector('.monitor').innerText = document.querySelector('.monitor').innerText.slice(0, -1);
     }
+    //Calc default value is 0.
     if (toSolve === "")
         document.querySelector('.monitor').innerText = '0';
 }

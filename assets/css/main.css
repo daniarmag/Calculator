@@ -8,8 +8,6 @@ body {
 .calculator {
     width: 450px;
     margin: 40px auto;
-    background-color: #333;
-    border-color: #555;
     padding: 15px;
     border-style: solid;
     display: flex;
@@ -18,12 +16,12 @@ body {
     border-width: 1.5px;
     align-items: center;
     border-radius: 20px;
+    background-color: #333;
+    border-color: #555;
 }
 
 .monitor {
-    background-color: #222;
     border-color: transparent;
-    color: white;
     border-radius: 4px;
     text-align: right;
     width: 92%;
@@ -33,6 +31,8 @@ body {
     align-items: center;
     border-style: solid;
     font-size: x-large;
+    background-color: #222;
+    color: white;
 }
 
 .result,
