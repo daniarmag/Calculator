@@ -51,14 +51,15 @@ function addToEquation(char)
             charToDisplay = "fac(";
             break;
         case "**2":
-            charToDisplay = "**2";
-            charToDisplay = "^";
+            charToSolve = "**2";
+            charToDisplay = "^2";
             break;
         case "**":
-            charToDisplay = "**";
+            charToSolve = "**";
             charToDisplay = "^";
             break;
         case "10**":
+            charToSolve = "10**";
             charToDisplay = "10^";
             break;
         default:

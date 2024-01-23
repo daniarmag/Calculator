@@ -5,6 +5,12 @@ body {
     background-color: #222;
 }
 
+.centered{
+    text-align: center;
+    font-size: 40px;
+    color: black;
+}
+
 .calculator {
     width: 450px;
     margin: 40px auto;
