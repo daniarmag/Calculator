@@ -4,116 +4,85 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <style>
-        body {
-    font-family: Arial, sans-serif;
-    background-color: #222;
-}
+    <link rel="stylesheet" href="assets/css/main.css" />
 
-.calculator {
-    width: 240px;
-    margin: 40px auto;
-    background-color: #333; 
-    padding: 15px;
-    border-style: solid;
-    border-color: #555; 
-}
-
-.buttonNum,
-.button {
-    float: left;
-    width: 50px;
-    margin: 5px;
-    background-color: #555; 
-    text-align: center;
-    padding: 5px 0;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.buttonNum:hover,
-.button:hover {
-    background-color: #777; 
-    color: white;
-}
-
-.monitor {
-    background-color: #222; 
-    width: 210px;
-    padding: 10px;
-    color: white;
-    margin: 5px;
-    border-radius: 4px;
-    text-align: right; 
-}
-
-.result {
-    background-color: #222; 
-    width: 110px;
-    margin-left: 125px;
-    margin-top: -34px;
-    background-color: rgb(78, 173, 175);
-    text-align: center;
-    padding: 5px 0;
-    border-radius: 4px;
-    cursor: pointer;
-}
-    </style>
+    
   </head>
   <body>
     <div style="text-align: center; font-size: 40px; color:black">
 
     </div>
-    <div class="calculator" style="border-radius: 20px;">
-        <div class="monitor">0</div>
-        <div class="button">C</div>
-        <div class="button">%</div>
-        <div class="button">^</div>
-        <div class="button">+</div>
-        <div class="buttonNum">1</div>
-        <div class="buttonNum">2</div>
-        <div class="buttonNum">3</div>
-        <div class="button">-</div>
-        <div class="buttonNum">4</div>
-        <div class="buttonNum">5</div>
-        <div class="buttonNum">6</div>
-        <div class="button">*</div>
-        <div class="buttonNum">7</div>
-        <div class="buttonNum">8</div>
-        <div class="buttonNum">9</div>
-        <div class="button">/</div>
-        <div class="buttonNum">0</div>
-        <div class="button">.</div>
-        <div style="clear: both;"></div>
-        <div class="result">=</div>
+    <div class="calculator">
+        <div class="monitor" input>0</div>
+      <div class="memoryButtons">
+        <div class="button">MC</div>
+        <div class="button">MR</div>
+        <div class="button">Mּ+</div>
+        <div class="button">M-</div>
+        <div class="button">MS</div>
+        <div class="button">M▼</div>
+      </div>
+
+      <div class="buttons">
+        <div class="button">2<sup>nd</sup></div>
+        <div class="button" onclick="addToEquation('pi')">π</div>
+        <div class="button" onclick="addToEquation('e')">e</div>
+        <div class="button" onclick="deleteAll()">C</div>
+        <div class="button" onclick="deleteFromEquation()">⌫</div>
+      </div>
+
+      <div class="buttons">
+        <div class="button" onclick="addToEquation('**2')">x<sup>2</sup></div>
+        <div class="button" onclick="addToEquation('1/')">1<sub>/x</sub></div>
+        <div class="button" onclick="addToEquation('abs')">|x|</div>
+        <div class="button" onclick="addToEquation('exp')">exp</div>
+        <div class="button" onclick="addToEquation('mod')">mod</div>
+      </div>
+
+      <div class="buttons">
+        <div class="button" onclick="addToEquation('sqrt')">√x</div>
+        <div class="button" onclick="addToEquation('lpar')">(</div>
+        <div class="button" onclick="addToEquation('rpar')">)</div>
+        <div class="button" onclick="addToEquation('factorial')">n!</div>
+        <div class="button" onclick="addToEquation('/')">&#247</div>
+      </div>
+
+      <div class="buttons">
+        <div class="button" onclick="addToEquation('**')">x<sup>y</sup></div>
+        <div class="buttonNum" onclick="addToEquation('7')">7</div>
+        <div class="buttonNum" onclick="addToEquation('8')">8</div>
+        <div class="buttonNum" onclick="addToEquation('9')">9</div>
+        <div class="button" onclick="addToEquation('*')">X</div>
+      </div>
+
+      <div class="buttons">
+        <div class="button" onclick="addToEquation('10**')">10<sup>x</sup></div>
+        <div class="buttonNum" onclick="addToEquation('4')">4</div>
+        <div class="buttonNum" onclick="addToEquation('5')">5</div>
+        <div class="buttonNum" onclick="addToEquation('6')">6</div>
+        <div class="button" onclick="addToEquation('-')">-</div>
+      </div>
+
+      <div class="buttons">
+        <div class="button" onclick="addToEquation('log')">log</div>
+        <div class="buttonNum" onclick="addToEquation('1')">1</div>
+        <div class="buttonNum" onclick="addToEquation('2')">2</div>
+        <div class="buttonNum" onclick="addToEquation('3')">3</div>
+        <div class="button" onclick="addToEquation('+')">+</div>
+      </div>
+
+      <div class="buttons">
+        <div class="button" onclick="addToEquation('ln')">ln</div>
+        <div class="buttonNum" onclick="plusMinus()">+<sub>/-</sub></div>
+        <div class="buttonNum" onclick="addToEquation('0')">0</div>
+        <div class="buttonNum" onclick="addToEquation('.')">.</div>
+        <div class="result" onclick="solveEquation()">=</div>
+      </div>
+
+      <div style="clear: both;"></div>
     </div>
 
-    <!-- special scripts for integration in MTW gallery - must be placed at the bottom of the HTML after your code -->
-    <script>
-        // custom config for the MTW app 
-        const mtwAppConfig = {
-            border: true // app border in the MTW page                    
-        }
-
-        ///////////////////////////////////////////////////////
-        // implement this functions in order to use private API        
-        const sendPrivateApiRequest = async () => {
-            // your code here:
-            // sendRequestToParent({ cat: 'getAssets' })
-        }        
-
-        const acceptPrivateApiResponse = async (data) => {
-            // process received data here:
-            // console.log(data)
-        }
-
-        // use this in order to send on document load
-        document.addEventListener('DOMContentLoaded', () => {
-            // your code here:
-            //sendRequestToParent({ method: 'getAssets' })
-        })
-
-    </script>
+    <script src="assets/js/main.js"></script>
     <script src="https://morethanwallet.com/appstore/index.js"></script>
   </body>
 </html>
