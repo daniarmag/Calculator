@@ -137,8 +137,18 @@ function deleteFromEquation()
         document.querySelector('.monitor').innerText = document.querySelector('.monitor').innerText.slice(0, -1);
     }
     //Calc default value is 0.
-    if (toSolve === "")
+    if (document.querySelector('.monitor').innerText.trim() === "")
+    {
         document.querySelector('.monitor').innerText = '0';
+        toSlice = "";
+    }
+        
+}
+
+//For non functional buttons
+function showNotFunctionalMessage() 
+{
+    alert("This button is not functional yet.");
 }
 
 
